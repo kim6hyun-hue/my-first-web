@@ -30,28 +30,40 @@
     </nav>
 
     <main>
-      <!-- 내 사진과 나를 소개하는 글 -->
-      <img src="./images/me.jpg" alt="내 사진" width="300" />
-      <section class="card">
-        <h2><span class="material-symbols-outlined"> person </span>소 개</h2>
-        <p>안녕하세요, 꿈을 기록하는 개발자 김욱현입니다.</p>
-      </section>
+      <h2>📸 실습 기록 갤러리</h2>
 
-      <section class="card">
-        <h2>
-          <span class="material-symbols-outlined"> star </span>나의 키워드
-        </h2>
-        <ul>
-          <li>#열정 #코딩 #운동</li>
-          <li>좋아하는 것: 배드민턴, 노래</li>
-          <li>나의 장점: 회복 탄력성, 끈기</li>
-          <li>나의 목표: 어제보다 0.1% 나아지는 오늘을 만들자!!</li>
-        </ul>
-      </section>
-      <a href="#" class="my-button">나에 대해 더 알아보기</a>
+      <div class="display-box">
+        <img
+          id="targetImg"
+          src="./images/crop1.jpg"
+          style="width: 100%; max-width: 500px; border-radius: 10px"
+        />
+        <p id="targetDesc">4월 7일: 방울토마토 첫 수확!</p>
+      </div>
+
+      <div class="thumb-list">
+        <img
+          src="./images/crop1.jpg"
+          alt="실습1"
+          onclick="show('./images/crop1.jpg', '4월 7일: 방울토마토 첫 수확!')"
+        />
+        <img
+          src="./images/crop2.jpg"
+          alt="실습2"
+          onclick="show('./images/crop2.jpg', '4월 9일: 비료 주기 실습 완료')"
+        />
+      </div>
     </main>
     <footer>
       &copy; 2026 김욱현 All rights reserved, 문의: kim6hyun@goedu.kr
     </footer>
+    <script>
+      function show(imgPath, text) {
+        // 1. 이미지 경로 변경
+        document.getElementById("targetImg").src = imgPath;
+        // 2. 설명 텍스트 변경
+        document.getElementById("targetDesc").innerText = text;
+      }
+    </script>
   </body>
 </html>

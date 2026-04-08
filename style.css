@@ -116,3 +116,102 @@ form {
   flex-direction: column;
   gap: 5px;
 }
+
+.input-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.input-row .input-group {
+  flex: 1;
+}
+
+/* 입력창 클릭 시 효과 추가 */
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+/* 배송 방식 선택(select) 디자인 다듬기 */
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+/* 2. 입체적인 주문 버튼 스타일 */
+.order-btn {
+  background-color: #2e7d32;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  background-color: #388e3c;
+  transform: translateY(2px);
+}
+
+.order-btn:active {
+  transform: translateY(5px);
+}
+
+.receipt-box {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px dashed #4caf50;
+  background-color: #fff;
+  border-radius: 10px;
+  display: none;
+}
+
+.receipt-box h3 {
+  color: #2e7d32;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* 갤러리 전용 디자인 */
+.display-box {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+#targetImg {
+  transition: transform 0.3s ease; /* 사진 바뀔 때 부드러운 효과 */
+}
+
+.thumb-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* 사진이 많아지면 다음 줄로 넘어가게 */
+}
+
+.thumb-list img {
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: 0.2s;
+  width: 100px; /* 썸네일 크기 고정 */
+  height: 100px;
+  object-fit: cover; /* 사진이 찌그러지지 않게 */
+  border-radius: 10px;
+}
+
+.thumb-list img:hover {
+  border-color: #3f72af;
+  transform: scale(1.1);
+}
