@@ -194,21 +194,21 @@ select {
   transition: transform 0.3s ease; /* 사진 바뀔 때 부드러운 효과 */
 }
 
+/* 기존 .thumb-list 코드를 찾아 아래 내용으로 교체하거나 수정하세요 */
 .thumb-list {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap; /* 사진이 많아지면 다음 줄로 넘어가게 */
+  display: grid; /* 바둑판 모양(Grid)으로 설정 */
+  grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개씩 똑같은 크기로! */
+  gap: 15px; /* 사진 사이 간격 */
+  margin-top: 20px;
 }
 
 .thumb-list img {
-  cursor: pointer;
-  border: 3px solid transparent;
-  transition: 0.2s;
-  width: 100px; /* 썸네일 크기 고정 */
-  height: 100px;
-  object-fit: cover; /* 사진이 찌그러지지 않게 */
+  width: 100%; /* 칸의 크기에 맞게 사진 크기 자동 조절 */
+  height: 120px; /* 높이는 통일 */
+  object-fit: cover; /* 사진이 찌그러지지 않게 꽉 채우기 */
   border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .thumb-list img:hover {
