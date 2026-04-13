@@ -30,102 +30,130 @@
     </nav>
 
     <main>
-      <section class="agriculture-portfolio">
-        <article class="crop-item">
-          <figure class="crop-image">
-            <img src="./images/tomato.jpg" alt="직접 재배한 방울토마토 사진" />
-            <figcaption>그림 1. 직접 재배한 방울토마토 사진</figcaption>
-          </figure>
+      <div id="login-box" style="text-align: center; margin: 50px">
+        <h2>🔒 시스템 인증이 필요합니다</h2>
+        <input type="password" id="userPw" placeholder="암호 4자리" />
+        <button onclick="checkLogin()">입장하기</button>
+      </div>
 
-          <div class="crop-details">
-            <h3>농작물 명칭: 유기농 방울토마토</h3>
+      <div id="secret-area" style="display: none">
+        <section class="agriculture-portfolio">
+          <article class="crop-item">
+            <figure class="crop-image">
+              <img
+                src="./images/tomato.jpg"
+                alt="직접 재배한 방울토마토 사진"
+              />
+              <figcaption>그림 1. 직접 재배한 방울토마토 사진</figcaption>
+            </figure>
 
-            <section class="info-block">
-              <h4>🌱 재배 및 생산 특성</h4>
-              <p>재배 기간, 사용 공법, 본인만의 재배 노하우를 적어보세요.</p>
-              <ul>
-                <li><strong>품종:</strong> 내용을 입력하세요.</li>
-                <li><strong>재배 환경:</strong> 시설재배 / 노지재배 등</li>
-              </ul>
-            </section>
+            <div class="crop-details">
+              <h3>농작물 명칭: 유기농 방울토마토</h3>
 
-            <section class="info-block distribution">
-              <h4>🚚 유통 구조 설계</h4>
-              <p>이 농작물이 소비자에게 도달하는 경로를 설계해 보세요.</p>
-              <div class="step-guide">
-                <span>생산자(나)</span> ➔ <span>로컬푸드 직매장</span> ➔
-                <span>최종 소비자</span>
+              <section class="info-block">
+                <h4>🌱 재배 및 생산 특성</h4>
+                <p>재배 기간, 사용 공법, 본인만의 재배 노하우를 적어보세요.</p>
+                <ul>
+                  <li><strong>품종:</strong> 내용을 입력하세요.</li>
+                  <li><strong>재배 환경:</strong> 시설재배 / 노지재배 등</li>
+                </ul>
+              </section>
+
+              <section class="info-block distribution">
+                <h4>🚚 유통 구조 설계</h4>
+                <p>이 농작물이 소비자에게 도달하는 경로를 설계해 보세요.</p>
+                <div class="step-guide">
+                  <span>생산자(나)</span> ➔ <span>로컬푸드 직매장</span> ➔
+                  <span>최종 소비자</span>
+                </div>
+                <ul>
+                  <li>
+                    <strong>물류 방식:</strong> 저온 유통(Cold Chain) 활용 여부
+                    등
+                  </li>
+                  <li><strong>판매 전략:</strong> 직거래 / 온라인 마켓 등</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+        </section>
+
+        <section id="order-area">
+          <hr />
+          <h2>📦 온라인 주문하기</h2>
+          <form action="">
+            <div class="input-row">
+              <div class="input-group">
+                <label for="">주문자 성함</label>
+                <input type="text" id="userName" placeholder="실명 입력" />
               </div>
-              <ul>
-                <li>
-                  <strong>물류 방식:</strong> 저온 유통(Cold Chain) 활용 여부 등
-                </li>
-                <li><strong>판매 전략:</strong> 직거래 / 온라인 마켓 등</li>
-              </ul>
-            </section>
-          </div>
-        </article>
-      </section>
-
-      <section id="order-area">
-        <hr />
-        <h2>📦 온라인 주문하기</h2>
-        <form action="">
-          <div class="input-row">
-            <div class="input-group">
-              <label for="">주문자 성함</label>
-              <input type="text" id="userName" placeholder="실명 입력" />
+              <div class="input-group">
+                <label for="">연락처</label>
+                <input type="text" id="userPhone" placeholder="010-0000-0000" />
+              </div>
             </div>
+
             <div class="input-group">
-              <label for="">연락처</label>
-              <input type="text" id="userPhone" placeholder="010-0000-0000" />
+              <label for="unitWeight">구매 단위 선택</label>
+              <select id="unitWeight">
+                <option value="15000">유기농 방울토마토 1kg (15,000원)</option>
+                <option value="40000">유기농 방울토마토 3kg (40,000원)</option>
+                <option value="60000">유기농 방울토마토 5kg (60,000원)</option>
+              </select>
             </div>
-          </div>
 
-          <div class="input-group">
-            <label for="unitWeight">구매 단위 선택</label>
-            <select id="unitWeight">
-              <option value="15000">유기농 방울토마토 1kg (15,000원)</option>
-              <option value="40000">유기농 방울토마토 3kg (40,000원)</option>
-              <option value="60000">유기농 방울토마토 5kg (60,000원)</option>
-            </select>
-          </div>
+            <div class="input-group">
+              <label for="quantity">주문 수량 (박스)</label>
+              <input type="number" id="quantity" value="1" min="1" max="10" />
+            </div>
 
-          <div class="input-group">
-            <label for="quantity">주문 수량 (박스)</label>
-            <input type="number" id="quantity" value="1" min="1" max="10" />
-          </div>
+            <div class="input-group">
+              <label for="">배송 방식 선택</label>
+              <select name="" id="deliveryFee">
+                <option value="3000">일반 택배(3,000원)</option>
+                <option value="5000">신선 새벽 배송(5,000원)</option>
+                <option value="0">광주 로컬푸드 매장 픽업(무료)</option>
+              </select>
+            </div>
 
-          <div class="input_group">
-            <label for="">배송 방식 선택</label>
-            <select name="" id="deliveryFee">
-              <option value="3000">일반 택배(3,000원)</option>
-              <option value="5000">신선 새벽 배송(5,000원)</option>
-              <option value="0">광주 로컬푸드 매장 픽업(무료)</option>
-            </select>
-          </div>
+            <div class="input-group">
+              <label for="">배송 메시지</label>
+              <textarea
+                name=""
+                id=""
+                placeholder="부재 시 문 앞에 놓아주세요"
+              ></textarea>
+            </div>
 
-          <div class="input-group">
-            <label for="">배송 메시지</label>
-            <textarea
-              name=""
-              id=""
-              placeholder="부재 시 문 앞에 놓아주세요"
-            ></textarea>
-          </div>
-
-          <button type="button" class="order-btn" onclick="processOrder()">
-            지금 바로 주문 완료
-          </button>
-          <div id="receipt" class="receipt-box"></div>
-        </form>
-      </section>
+            <button type="button" class="order-btn" onclick="processOrder()">
+              지금 바로 주문 완료
+            </button>
+            <div id="receipt" class="receipt-box"></div>
+          </form>
+        </section>
+      </div>
     </main>
     <footer>
       &copy; 2026 김욱현 All rights reserved, 문의: kim6hyun@goedu.kr
     </footer>
 
     <script>
+      function checkLogin() {
+        // 1. 입력된 암호 값 읽기
+        let pw = document.getElementById("userPw").value;
+
+        // 2. 조건문을 활용한 인증 로직 구현
+        if (pw === "1234") {
+          alert("인증에 성공하였습니다.");
+
+          // UI 상태 변경: 로그인 창은 숨기고, 콘텐츠 영역은 표시합니다.
+          document.getElementById("login-box").style.display = "none";
+          document.getElementById("secret-area").style.display = "block";
+        } else {
+          alert("암호가 일치하지 않습니다. 다시 시도하십시오.");
+        }
+      }
+
       function processOrder() {
         // [1] 데이터 가져오기
         let name = document.getElementById("userName").value;

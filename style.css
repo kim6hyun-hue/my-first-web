@@ -117,6 +117,14 @@ form {
   gap: 5px;
 }
 
+.input-group input,
+textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
 .input-row {
   display: flex;
   gap: 15px;
@@ -209,6 +217,7 @@ select {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
+  border: 3px solid transparent;
 }
 
 .thumb-list img:hover {
